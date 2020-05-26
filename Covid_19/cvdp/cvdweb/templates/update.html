@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>  
+<title>Details</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text],input[type=email], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus,input[type=email]:focus ,input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form action="update" method="POST">
+    {% csrf_token %}
+  <div class="container">
+    <h1>FORM</h1>
+    <p>Change the value to false where not applicable.</p>
+    <hr>
+
+    
+
+    <label class="checkbox-inline"><input type="text" name="q1" value="true">MORE THAN 20 ACTIVE CASE WITHIN 500M ACCORDING TO "ArogyaSetu" ?</label><br><br>
+    <label class="checkbox-inline"><input type="text" name="q2" value="true">AGE MORE THAN 45 ?</label><br><br>
+    <label class="checkbox-inline"><input type="text" name="q3" value="true">TRAVEL HISTROY TO ANY HOTSPOT ?</label><br><br>
+    <label class="checkbox-inline"><input type="text" name="q4" value="true">SYMTOMS LIKE FEAVER AND DRY COUGH ?</label><br><br>
+    <label class="checkbox-inline"><input type="text" name="q5" value="true">ANY "Persistent Lung Disease" OR "Any Other Critical Disease" ?</label><br><br>
+    <label class="checkbox-inline"><input type="text" name="q6" value="true">WENT NEAR TO A SYMTOMATIC OR CORONA POSITIVE PERSON ?</label><br><br>
+    <hr>
+
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+  
+  <div class="container"> 
+    {% for message in messages %}
+    <p>{{message}}</p> 
+    {% endfor %}
+</div>
+
+  <div class="container signin">
+    <p>Not registered ? <a href="register">register here</a>.</p>
+  </div>    
