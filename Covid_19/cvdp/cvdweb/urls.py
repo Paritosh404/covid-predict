@@ -9,7 +9,8 @@ urlpatterns =[
     path('logout',views.logout,name='logout'),
     path('',views.register,name='register'),
     path('update',views.update,name='update'),
-    path('results',views.result,name='result')
+    path('results',views.result,name='result'),
+    path('info',views.info,name='info')
 
 
 ]
